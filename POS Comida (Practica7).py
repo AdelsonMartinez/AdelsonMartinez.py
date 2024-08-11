@@ -47,3 +47,4 @@ def imprimirfactura(carrito):
         print(str(item['id'])+' '*(tamid+4-len(str(item['id'])))+item['nombre']+' '*(tamnombre+7-len(item['nombre']))+str(item['precio']))
 
 imprimirfactura(menu)
+
