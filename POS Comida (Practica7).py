@@ -25,24 +25,23 @@ def agregar_al_carrito(id_producto, cantidad):
 
 def calcular_total():
     subtotal = sum(item['cantidad'] * menu[item['id']]['precio'] for item in carrito)
-    impuesto = subtotal * 0.18
-    total = subtotal + impuesto
-    return subtotal, total
+    impuestos = subtotal * 0.18
+    total = subtotal + impuestos
+    return subtotal, impuestos, total
 
 def imprimir_factura():
     print("\nFactura:")
-    print("ID\tDescripción\t\tPrecio por Unidad\tCantidad\tPrecio Total")
+    print("{:<8}{:<20}{:<20}{:<10}{:<15}".format("ID", "Descripción", "Precio por Unidad", "Cantidad", "Precio Total"))
     for item in carrito:
         id_producto = item['id']
         cantidad = item['cantidad']
         precio_unitario = menu[id_producto]['precio']
         total_producto = precio_unitario * cantidad
-        print(f"{id_producto}\t{menu[id_producto]['nombre'].ljust(12)}\tRD${precio_unitario}\t{cantidad}\t\tRD${total_producto}")
-
-    subtotal, total = calcular_total()
-    print(f"\nSubtotal: RD${subtotal}")
-    print(f"Total (incluyendo impuestos): RD${total:.2f}")
-
+        print("{:<8}{:<20}RD${:<20} {:<10.2f}RD${:<10.2f}".format(id_producto, menu[id_producto]['nombre'], precio_unitario, cantidad, total_producto))
+    subtotal,impuestos, total = calcular_total()
+    print(f"\nSubtotal: RD${subtotal:.2f}")
+    print(f"\nImpuesto: RD${impuestos:.2f}")
+    print(f"Total (incluye impuestos): RD${total:.2f}")
 # Flujo principal del POS
 while True:
     mostrar_menu()
