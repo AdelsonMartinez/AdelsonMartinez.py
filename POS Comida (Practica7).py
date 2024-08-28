@@ -10,9 +10,10 @@ menu = {
 carrito = []
 
 def mostrar_menu():
-    print("ID\tNombre\t\tPrecio")
+    print(">>>>>>>>>>Menú>>>>>>>>>>>>>")
+    print("ID\tNombre\t""Precio")
     for id_producto, detalles in menu.items():
-        print(f"{id_producto}\t{detalles['nombre'].ljust(12)}\tRD${detalles['precio']}")
+        print(f"{id_producto}\t{detalles['nombre'].ljust(12)}RD${detalles['precio']}")
 
 def agregar_al_carrito(id_producto, cantidad):
     # Verificamos si el producto ya está en el carrito
@@ -37,7 +38,7 @@ def imprimir_factura():
         cantidad = item['cantidad']
         precio_unitario = menu[id_producto]['precio']
         total_producto = precio_unitario * cantidad
-        print("{:<8}{:<20}RD${:<20} {:<10.2f}RD${:<10.2f}".format(id_producto, menu[id_producto]['nombre'], precio_unitario, cantidad, total_producto))
+        print("{:<8}{:<20}RD${:<20}{:<10.1f}RD${:<10.2f}".format(id_producto, menu[id_producto]['nombre'], precio_unitario, cantidad, total_producto))
     subtotal,impuestos, total = calcular_total()
     print(f"\nSubtotal: RD${subtotal:.2f}")
     print(f"\nImpuesto: RD${impuestos:.2f}")
