@@ -21,3 +21,9 @@ class Carrito:
         if cantidad > producto.cantidad_stock:
             print(f"No hay suficiente stock para {producto.nombre}. Stock actual: {producto.cantidad_stock}")
             return
+        # Verificamos si el producto ya está en el carrito
+        for item in self.items:
+            if item['producto'].id_producto == producto.id_producto:
+                item['cantidad'] += cantidad
+                producto.cantidad_stock -= cantidad  # Reducir stock
+                return
