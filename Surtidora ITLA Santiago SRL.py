@@ -12,6 +12,15 @@ class Producto:
     def __str__(self):
         return f"{self.id_producto}\t{self.nombre.ljust(12)}RD${self.precio:.2f} (Stock: {self.cantidad_stock})"
 
+class Carrito:
+    def __init__(self):
+        self.items = []
+
+    def agregar_producto(self, producto, cantidad):
+        # Verificamos que haya suficiente stock
+        if cantidad > producto.cantidad_stock:
+            print(f"No hay suficiente stock para {producto.nombre}. Stock actual: {producto.cantidad_stock}")
+            return
 
 
 
