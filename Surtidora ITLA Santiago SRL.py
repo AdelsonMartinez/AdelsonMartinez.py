@@ -25,5 +25,5 @@ class Carrito:
         for item in self.items:
             if item['producto'].id_producto == producto.id_producto:
                 item['cantidad'] += cantidad
-                producto.cantidad_stock -= cantidad  # Reducir stock
+                producto.cantidad_stock -= cantidad  
                 return
