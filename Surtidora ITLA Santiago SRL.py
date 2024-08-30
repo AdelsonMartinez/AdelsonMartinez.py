@@ -27,3 +27,6 @@ class Carrito:
                 item['cantidad'] += cantidad
                 producto.cantidad_stock -= cantidad  
                 return
+        # Si no está, se añade al carrito
+        self.items.append({'producto': producto, 'cantidad': cantidad})
+        producto.cantidad_stock -= cantidad  # Reducir stock
