@@ -21,7 +21,3 @@ class Carrito:
         if cantidad > producto.cantidad_stock:
             print(f"No hay suficiente stock para {producto.nombre}. Stock actual: {producto.cantidad_stock}")
             return
-
-
-
-
