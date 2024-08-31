@@ -30,3 +30,11 @@ class Carrito:
         # Si no está, se añade al carrito
         self.items.append({'producto': producto, 'cantidad': cantidad})
         producto.cantidad_stock -= cantidad  # Reducir stock
+    def calcular_total(self):
+        subtotal = 0
+        impuestos_totales = 0
+        
+        for item in self.items:
+            producto = item['producto']
+            cantidad = item['cantidad']
+            subtotal += producto.precio * cantidad
