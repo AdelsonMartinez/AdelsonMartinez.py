@@ -1,6 +1,6 @@
 #Surtidora ITLA Santiago SRL. 
 from time import localtime, strftime
-
+#Se agrega la clase Producto
 class Producto:
     def __init__(self, id_producto, nombre, precio, cantidad_stock, tipo_impuesto):
         self.id_producto = id_producto
@@ -11,7 +11,7 @@ class Producto:
         
     def __str__(self):
         return f"{self.id_producto}\t{self.nombre.ljust(12)}RD${self.precio:.2f} (Stock: {self.cantidad_stock})"
-
+#Se agrega la clase Carrito 
 class Carrito:
     def __init__(self):
         self.items = []
@@ -30,11 +30,21 @@ class Carrito:
         # Si no está, se añade al carrito
         self.items.append({'producto': producto, 'cantidad': cantidad})
         producto.cantidad_stock -= cantidad  # Reducir stock
+
     def calcular_total(self):
         subtotal = 0
         impuestos_totales = 0
-        
+
         for item in self.items:
             producto = item['producto']
             cantidad = item['cantidad']
             subtotal += producto.precio * cantidad
+           
+            # Calcular impuestos según el tipo
+            if producto.tipo_impuesto == "01":
+                impuestos_totales += (producto.precio * cantidad) * 0.18
+            elif producto.tipo_impuesto == "02":
+                impuestos_totales += (producto.precio * cantidad) * 0.16
+            
+        total = subtotal + impuestos_totales
+        return subtotal, impuestos_totales, total
