@@ -72,3 +72,18 @@ class Carrito:
         print(f"\nSubtotal: RD${subtotal:.2f}")
         print(f"Impuestos: RD${impuestos:.2f}")
         print(f"Total (incluye impuestos): RD${total:.2f}")
+class Menu:
+    def __init__(self):
+        self.productos = {
+            "15959": Producto("15959", "Arroz", 50, 20, "01"),
+            "2": Producto("2", "Habichuelas", 80, 10, "01"),
+            "3": Producto("3", "Aceite", 300, 15, "02"),
+            "4": Producto("4", "Pollo", 85, 25, "01"),
+            "1234523": Producto("1234523", "Lechuga", 80, 30, "00"),
+        }
+
+    def mostrar_menu(self):
+        print(">>>>>>>>>>Menú>>>>>>>>>>>>>")
+        print("ID\tNombre\t""Precio")
+        for producto in self.productos.values():
+            print(producto)
