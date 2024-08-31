@@ -59,3 +59,16 @@ class Carrito:
         print(f"ID Cliente: {id_cliente}")
         print(f"Fecha: {self.obtener_fecha_hora()}")
         print("{:<8}{:<20}{:<20}{:<10}{:<15}".format("ID", "Descripción", "Precio por Unidad", "Cantidad", "Precio Total"))
+       
+        for item in self.items:
+            producto = item['producto']
+            cantidad = item['cantidad']
+            total_producto = producto.precio * cantidad
+            print("{:<8}{:<20}RD${:<20}{:<10.1f}RD${:<10.2f}".format(
+                producto.id_producto, producto.nombre, producto.precio, cantidad, total_producto
+            ))
+
+        subtotal, impuestos, total = self.calcular_total()
+        print(f"\nSubtotal: RD${subtotal:.2f}")
+        print(f"Impuestos: RD${impuestos:.2f}")
+        print(f"Total (incluye impuestos): RD${total:.2f}")
