@@ -87,3 +87,13 @@ class Menu:
         print("ID\tNombre\t""Precio")
         for producto in self.productos.values():
             print(producto)
+def main():
+    menu = Menu()
+    carrito = Carrito()
+    
+    nombre_cliente = input("Ingrese el nombre del cliente: ")
+    id_cliente = input("Ingrese el ID del cliente: ")
+    
+    while True:
+        menu.mostrar_menu()
+        id_producto = input("Elija un producto por su ID: ")
