@@ -97,7 +97,7 @@ def main():
     while True:
         menu.mostrar_menu()
         id_producto = input("Elija un producto por su ID: ")
-        
+
         # Verificamos que el ID sea válido
         if id_producto not in menu.productos:
             print("ID inválido. Inténtelo de nuevo.")
@@ -109,3 +109,14 @@ def main():
         if cantidad < 0:
             print("Cantidad inválida. Debe ingresar un número positivo.")
             continue
+        carrito.agregar_producto(menu.productos[id_producto], cantidad)
+        
+        continuar = input("¿Deseas añadir otro producto? (S/N): ").lower()
+        if continuar != 's':
+            break
+
+    # Imprimimos la factura final
+    carrito.imprimir_factura(nombre_cliente, id_cliente)
+
+if __name__ == "__main__":
+    main()
