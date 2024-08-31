@@ -1,5 +1,6 @@
 #Surtidora ITLA Santiago SRL. 
 from time import localtime, strftime
+import os  # Importar el módulo os para limpiar pantalla
 #Se agrega la clase Producto
 class Producto:
     def __init__(self, id_producto, nombre, precio, cantidad_stock, tipo_impuesto):
@@ -87,6 +88,10 @@ class Menu:
         print("ID\tNombre\t""Precio")
         for producto in self.productos.values():
             print(producto)
+    @staticmethod
+    def limpiar_pantalla():
+        # Función para limpiar la pantalla
+        os.system('cls' if os.name == 'nt' else 'clear')
 def main():
     menu = Menu()
     carrito = Carrito()
@@ -104,7 +109,7 @@ def main():
             continue
 
         cantidad = int(input("Ingrese la cantidad del producto: "))
-        
+        menu.limpiar_pantalla()  # Limpiar la pantalla después de procesar la opción
         # Verificamos que la cantidad no sea negativa
         if cantidad < 0:
             print("Cantidad inválida. Debe ingresar un número positivo.")
