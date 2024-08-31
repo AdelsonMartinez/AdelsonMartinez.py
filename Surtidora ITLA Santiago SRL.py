@@ -48,3 +48,14 @@ class Carrito:
             
         total = subtotal + impuestos_totales
         return subtotal, impuestos_totales, total
+
+    def obtener_fecha_hora(self):
+        # Función para obtener la fecha y hora actual
+        return strftime("%d/%m/%Y %H:%M", localtime())
+
+    def imprimir_factura(self, nombre_cliente, id_cliente):
+        print("\nFactura:")
+        print(f"Cliente: {nombre_cliente}")
+        print(f"ID Cliente: {id_cliente}")
+        print(f"Fecha: {self.obtener_fecha_hora()}")
+        print("{:<8}{:<20}{:<20}{:<10}{:<15}".format("ID", "Descripción", "Precio por Unidad", "Cantidad", "Precio Total"))
