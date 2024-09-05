@@ -101,3 +101,11 @@ if __name__ == "__main__":
     # Agregar almacenes al sistema
     sistema.agregar_almacen(almacen1)
     sistema.agregar_almacen(almacen2)
+    
+    # Creación de empleados con credenciales
+    empleado1 = Empleado("Adelson Martinez", "adelsonmp", "data123")
+    empleado2 = Empleado("Karol Abreu", "karola12", "welcome123")
+    
+    # Autenticación del empleado
+    username_input = input("Ingrese su nombre de usuario: ")
+    password_input = input("Ingrese su contraseña: ")
