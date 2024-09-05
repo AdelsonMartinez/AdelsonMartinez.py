@@ -101,7 +101,7 @@ if __name__ == "__main__":
     # Agregar almacenes al sistema
     sistema.agregar_almacen(almacen1)
     sistema.agregar_almacen(almacen2)
-    
+
     # Creación de empleados con credenciales
     empleado1 = Empleado("Adelson Martinez", "adelsonmp", "data123")
     empleado2 = Empleado("Karol Abreu", "karola12", "welcome123")
@@ -109,3 +109,16 @@ if __name__ == "__main__":
     # Autenticación del empleado
     username_input = input("Ingrese su nombre de usuario: ")
     password_input = input("Ingrese su contraseña: ")
+# Intentar autenticar al empleado1
+    empleado1.autenticar(username_input, password_input)
+    
+    # Si empleado1 no está autenticado, intentar autenticar a empleado2
+    if not empleado1.autenticado:
+        empleado2.autenticar(username_input, password_input)
+
+    # Interacción con el sistema después de la autenticación
+    if empleado1.autenticado or empleado2.autenticado:
+        empleado = empleado1 if empleado1.autenticado else empleado2
+        while True:
+            # Limpiar pantalla antes de mostrar el menú
+            limpiar_pantalla()
