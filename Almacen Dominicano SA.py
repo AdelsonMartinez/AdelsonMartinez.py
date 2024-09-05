@@ -61,3 +61,22 @@ class SistemaGestionAlmacenes: #se agrega la clase que gestiona múltiples almac
                 almacen.mostrar_capacidad()
         else:
             print("No hay almacenes en el sistema.")
+#se define la clase Empleado            
+class Empleado:
+    def __init__(self, nombre, username, password): #se crea una instancia de la clase Empleado que recibe tres parámetros
+        self.nombre = nombre
+        self.username = username
+        self.password = password
+        self.autenticado = False
+#Este método permite autenticar al empleado
+    def autenticar(self, username, password):
+        if self.username == username and self.password == password:
+            self.autenticado = True
+            print(f"{self.nombre} ha sido autenticado correctamente.")
+        else:
+            print("Autenticación fallida. Usuario o contraseña incorrectos.")
+#Este método permite al empleado registrar un ítem en almacén
+    def registrar_item(self, almacen, item): 
+        if not self.autenticado:
+            print("Acceso denegado. Por favor, autentíquese para registrar un ítem.")
+            return
