@@ -53,4 +53,11 @@ class SistemaGestionAlmacenes: #se agrega la clase que gestiona múltiples almac
     def agregar_almacen(self, almacen): #se define el método de la clase 
         self.almacenes.append(almacen)
         print(f"Almacén {almacen.nombre} agregado al sistema.")
-
+#se agrega el metodo mostrar_almacenes que tiene como objetivo presentar información sobre todos los almacenes disponibles.
+    def mostrar_almacenes(self): 
+        if self.almacenes:
+            for almacen in self.almacenes:
+                print(f"Almacén ID: {almacen.almacen_id}, Nombre: {almacen.nombre}")
+                almacen.mostrar_capacidad()
+        else:
+            print("No hay almacenes en el sistema.")
