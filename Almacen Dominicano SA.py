@@ -165,3 +165,16 @@ if __name__ == "__main__":
                         print(f"Ítem {item_id} modificado correctamente.")
                         break
 
+                else:
+                    print(f"Ítem {item_id} no encontrado en el almacén {almacen1.nombre}.")
+
+            elif opcion == '7':
+                print("Saliendo del sistema. ¡Hasta luego!")
+                break
+
+            else:
+                print("Opción no válida, por favor intente de nuevo.")
+
+    # Mostrar todos los almacenes al final
+    sistema.mostrar_almacenes()
+
