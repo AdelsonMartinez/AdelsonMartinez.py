@@ -122,3 +122,19 @@ if __name__ == "__main__":
         while True:
             # Limpiar pantalla antes de mostrar el menú
             limpiar_pantalla()
+            
+            print(f"\n¿Qué acción desea realizar, {empleado.nombre}?")
+            print("1. Agregar ítem al almacén principal")
+            print("2. Retirar ítem del almacén principal")
+            print("3. Mostrar ítems en el almacén principal")
+            print("4. Mostrar capacidad del almacén principal")
+            print("5. Mostrar capacidad del almacén secundario")
+            print("6. Modificar ítem en el almacén principal")
+            print("7. Salir")
+
+            opcion = input("Seleccione una opción (1-7): ")
+
+            if opcion == '1':
+                item_id = int(input("Ingrese ID del ítem: "))
+                descripcion = input("Ingrese descripción del ítem: ")
+                volumen = float(input("Ingrese volumen del ítem (m³): "))
