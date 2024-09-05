@@ -89,3 +89,15 @@ print(f"{self.nombre} está registrando el ítem {item.item_id} en el almacén."
             return
         print(f"{self.nombre} está retirando el ítem {item_id} del almacén.")
         almacen.retirar_item(item_id)
+# Impresion de bienvenida al usuario
+if __name__ == "__main__":
+    print("*****Bienvenido a Almacén Dominicano S.A*****")  
+    sistema = SistemaGestionAlmacenes() #se crea instancia de la clase SistemaGestionAlmacenes
+
+    # se crean dos instancias de la clase almacen
+    almacen1 = Almacen(1, "Almacén Principal", 10, 5, 20)
+    almacen2 = Almacen(2, "Almacén Secundario", 8, 4, 15)
+
+    # Agregar almacenes al sistema
+    sistema.agregar_almacen(almacen1)
+    sistema.agregar_almacen(almacen2)
