@@ -1,6 +1,6 @@
 import os
 
-class Item: 
+class Item: #se agrega la clase item y sus atributos
     def __init__(self, item_id, description, volumen):
         self.item_id = item_id
         self.description = description
@@ -8,7 +8,7 @@ class Item:
         
     def __str__(self):  # Se accede a los atributos de la instancia y se muestran en un formato legible
         return f"ID: {self.item_id}, Descripción: {self.description}, Volumen: {self.volumen} m³"
-
+#se agrega la clase almacen
 class Almacen:
     def __init__(self, almacen_id, nombre, altura, anchura, longitud):
         self.almacen_id = almacen_id
