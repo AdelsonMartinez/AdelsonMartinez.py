@@ -80,3 +80,12 @@ class Empleado:
         if not self.autenticado:
             print("Acceso denegado. Por favor, autentíquese para registrar un ítem.")
             return
+print(f"{self.nombre} está registrando el ítem {item.item_id} en el almacén.")
+        almacen.agregar_item(item)
+    
+    def retirar_item(self, almacen, item_id): #se define la función que verifica si el usuario está autenticado antes de permitirle retirar un ítem de un almacén.
+        if not self.autenticado:
+            print("Acceso denegado. Por favor, autentíquese para retirar un ítem.")
+            return
+        print(f"{self.nombre} está retirando el ítem {item_id} del almacén.")
+        almacen.retirar_item(item_id)
