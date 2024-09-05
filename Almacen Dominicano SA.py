@@ -122,7 +122,7 @@ if __name__ == "__main__":
         while True:
             # Limpiar pantalla antes de mostrar el menú
             limpiar_pantalla()
-            
+
             print(f"\n¿Qué acción desea realizar, {empleado.nombre}?")
             print("1. Agregar ítem al almacén principal")
             print("2. Retirar ítem del almacén principal")
@@ -138,3 +138,30 @@ if __name__ == "__main__":
                 item_id = int(input("Ingrese ID del ítem: "))
                 descripcion = input("Ingrese descripción del ítem: ")
                 volumen = float(input("Ingrese volumen del ítem (m³): "))
+                                nuevo_item = Item(item_id, descripcion, volumen)
+                empleado.registrar_item(almacen1, nuevo_item)  # Se agrega al almacen1 por defecto
+
+            elif opcion == '2':
+                item_id = int(input("Ingrese ID del ítem a retirar: "))
+                empleado.retirar_item(almacen1, item_id)  #Se agrega al almacen1 por defecto
+
+            elif opcion == '3':
+                almacen1.mostrar_items()  #Se agrega al almacen1 por defecto
+
+            elif opcion == '4':
+                almacen1.mostrar_capacidad()  #Se agrega al almacen1 por defecto
+
+            elif opcion == '5':
+                almacen2.mostrar_capacidad()  # Muestra la capacidad del almacén secundario
+
+            elif opcion == '6':
+                item_id = int(input("Ingrese ID del ítem a modificar: "))
+                for item in almacen1.items:
+                    if item.item_id == item_id:
+                        nueva_descripcion = input("Ingrese la nueva descripción: ")
+                        nuevo_volumen = float(input("Ingrese el nuevo volumen (m³): "))
+                        item.description = nueva_descripcion
+                        item.volumen = nuevo_volumen
+                        print(f"Ítem {item_id} modificado correctamente.")
+                        break
+
