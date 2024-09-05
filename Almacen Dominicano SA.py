@@ -29,10 +29,17 @@ class Almacen:
             print(f"No hay suficiente espacio en el almacén {self.nombre} para el ítem {item.item_id}.")
 
 def retirar_item(self, item_id): #se define una función llamada retirar_item 
-        for item in self.items: #se inicia un bucle que itera sobre cada ítem en la lista llamada self.items,
-            if item.item_id == item_id: #En cada iteración se verifica si el item.item_id del ítem actual coincide con el item_id proporcionado. 
+        for item in self.items: #se inicia un bucle que itera sobre cada ítem en la lista llamada self.items
+            if item.item_id == item_id: #instrucción que verifica si el atributo item_id del objeto item es igual a la variable item_id
                 self.items.remove(item)
                 self.capacidad_disponible += item.volumen
                 print(f"Ítem {item.item_id} retirado del almacén {self.nombre}.")
                 return
         print(f"Ítem {item_id} no encontrado en el almacén {self.nombre}.")
+def mostrar_items(self): #se agrega el método que se encarga de mostrar los elementos almacenados
+        if self.items:
+            print(f"Ítems en el almacén {self.nombre}:")
+            for item in self.items:
+                print(str(item))
+        else:
+            print(f"No hay ítems en el almacén {self.nombre}.")
