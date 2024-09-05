@@ -43,3 +43,14 @@ def mostrar_items(self): #se agrega el método que se encarga de mostrar los ele
                 print(str(item))
         else:
             print(f"No hay ítems en el almacén {self.nombre}.")
+def mostrar_capacidad(self): #se agrega el método para mostrar información sobre la capacidad del almacén.
+        print(f"Capacidad total del almacén {self.nombre}: {self.capacidad_total} m³")
+        print(f"Capacidad disponible del almacén {self.nombre}: {self.capacidad_disponible} m³")
+
+class SistemaGestionAlmacenes: #se agrega la clase que gestiona múltiples almacenes.
+    def __init__(self):
+        self.almacenes = []
+    def agregar_almacen(self, almacen): #se define el método de la clase 
+        self.almacenes.append(almacen)
+        print(f"Almacén {almacen.nombre} agregado al sistema.")
+
