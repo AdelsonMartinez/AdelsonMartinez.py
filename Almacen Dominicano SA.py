@@ -129,8 +129,8 @@ if __name__ == "__main__":
     if empleado1.autenticado or empleado2.autenticado:
         empleado = empleado1 if empleado1.autenticado else empleado2
         while True:
-            # Limpiar pantalla antes de mostrar el menú
-            os.system('cls' if os.name == 'nt' else 'clear')  # Para limpiar la pantalla en Windows o Unix
+            # Limpiar pantalla justo antes de mostrar el menú
+            os.system('cls' if os.name == 'nt' else 'clear')  
 
             print(f"\n¿Qué acción desea realizar, {empleado.nombre}?")
             print("1. Agregar ítem al almacén principal")
@@ -183,7 +183,8 @@ if __name__ == "__main__":
             else:
                 print("Opción no válida, por favor intente de nuevo.")
 
+            # Pausa para que el usuario vea el mensaje antes de limpiar la pantalla 
+            input("Presione Enter para continuar...")
+    
     # Mostrar todos los almacenes al final
     sistema.mostrar_almacenes()
-
-
