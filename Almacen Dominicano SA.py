@@ -111,8 +111,8 @@ if __name__ == "__main__":
     sistema.agregar_almacen(almacen2)
 
     # Creación de empleados con credenciales
-    empleado1 = Empleado("Adelson Martinez", "adelsonmp", "data123")
-    empleado2 = Empleado("Karol Abreu", "karola12", "welcome123")
+    empleado1 = Empleado("Adelson", "adelsonmp", "data123")
+    empleado2 = Empleado("Carolina", "karola12", "welcome123")
     
     # Autenticación del empleado
     username_input = input("Ingrese su nombre de usuario: ")
