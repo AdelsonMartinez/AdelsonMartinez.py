@@ -26,3 +26,6 @@ class TresEnRaya:
         # Etiqueta que muestra el turno actual
         self.indicador_turno = tk.Label(self.root, text=f"Turno: Jugador {self._jugador}", font=("Helvetica", 20), bg="#A3C9C9", fg="#FF5733")
         self.indicador_turno.pack(pady=10)
+        # Etiquetas para mostrar las puntuaciones
+        self.indicador_puntuacion = tk.Label(self.root, text=f"X: {self._punctuaciones['X']}  O: {self._punctuaciones['O']}", font=("Helvetica", 20), bg="#A3C9C9", fg="#000000")  # Cambiado a negro
+        self.indicador_puntuacion.pack(pady=10)
