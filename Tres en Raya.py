@@ -14,7 +14,7 @@ class TresEnRaya:
         self._botones = []  # Lista para almacenar botones del tablero
         self._punctuaciones = {'X': 0, 'O': 0}  # Contadores de puntos para cada jugador
         self.crear_interfaz()
- def crear_interfaz(self):
+    def crear_interfaz(self):
         """
         Crea la interfaz gráfica del juego.
         Incluye el título, botón de reinicio, y botones del tablero.
@@ -23,3 +23,6 @@ class TresEnRaya:
         titulo = tk.Label(self.root, text="Tres en Raya", font=("Helvetica", 30), bg="#A3C9C9", fg="#000000")  # Cambiado a negro
         titulo.pack(pady=10)
 
+        # Etiqueta que muestra el turno actual
+        self.indicador_turno = tk.Label(self.root, text=f"Turno: Jugador {self._jugador}", font=("Helvetica", 20), bg="#A3C9C9", fg="#FF5733")
+        self.indicador_turno.pack(pady=10)
