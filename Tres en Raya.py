@@ -29,3 +29,9 @@ class TresEnRaya:
         # Etiquetas para mostrar las puntuaciones
         self.indicador_puntuacion = tk.Label(self.root, text=f"X: {self._punctuaciones['X']}  O: {self._punctuaciones['O']}", font=("Helvetica", 20), bg="#A3C9C9", fg="#000000")  # Cambiado a negro
         self.indicador_puntuacion.pack(pady=10)
+        reiniciar_btn = tk.Button(self.root, text="Reiniciar Juego", font=("Helvetica", 16), command=self.reiniciar, bg="#FFB6C1", fg="#000000")  # Cambiado a negro
+        reiniciar_btn.pack(pady=10)
+
+        #Se crea un marco para los botones del tablero
+        tablero_frame = tk.Frame(self.root, bg="#A3C9C9")
+        tablero_frame.pack()
