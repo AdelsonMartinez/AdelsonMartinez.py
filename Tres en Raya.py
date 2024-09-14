@@ -103,3 +103,11 @@ class TresEnRaya:
             if self._tablero[a] == self._tablero[b] == self._tablero[c] != "":
                 return True
         return False
+def main():
+    """Función principal que inicia la aplicación."""
+    root = tk.Tk()
+    tres_en_raya = TresEnRaya(root)
+    root.mainloop()
+
+if __name__ == '__main__':
+    main()
