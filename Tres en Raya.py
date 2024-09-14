@@ -80,3 +80,10 @@ class TresEnRaya:
                 messagebox.showinfo("Fin del juego", f"Ganador: Jugador {self._jugador}")
             elif "" not in self._tablero:
                 messagebox.showinfo("Fin del juego", "Empate")
+            else:
+                # Cambia el turno al siguiente jugador
+                self._jugador = "O" if self._jugador == "X" else "X"
+                self.indicador_turno.config(text=f"Turno: Jugador {self._jugador}")  # Actualiza el indicador de turno
+        else:
+            # Mensaje de advertencia si el movimiento no es válido
+            messagebox.showwarning("Movimiento inválido", "Este espacio ya está ocupado, elige otro.")
