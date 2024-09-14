@@ -35,3 +35,18 @@ class TresEnRaya:
         #Se crea un marco para los botones del tablero
         tablero_frame = tk.Frame(self.root, bg="#A3C9C9")
         tablero_frame.pack()
+
+        for i in range(9):
+            boton = tk.Button(
+                tablero_frame, 
+                text="", 
+                font=("Helvetica", 24), 
+                height=2, 
+                width=5, 
+                bg="#FFFFFF", 
+                activebackground="#DDDDDD",
+                command=lambda i=i: self.hacer_movimiento(i)
+            )
+            # Establecer el tamaño del botón usando grid en el marco
+            boton.grid(row=i // 3, column=i % 3, padx=10, pady=10)
+            self._botones.append(boton)
