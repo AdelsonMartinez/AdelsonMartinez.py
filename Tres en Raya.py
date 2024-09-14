@@ -50,3 +50,20 @@ class TresEnRaya:
             # Establecer el tamaño del botón usando grid en el marco
             boton.grid(row=i // 3, column=i % 3, padx=10, pady=10)
             self._botones.append(boton)
+
+    def reiniciar(self):
+        """
+        Reinicia el estado del juego, permitiendo que los jugadores empiecen de nuevo.
+        """
+        self._jugador = "X"  # Reinicia el jugador a X
+        self._tablero = [""] * 9  # Limpia el tablero
+        for boton in self._botones:
+            boton.config(text="", bg="#FFFFFF")  # Restablece los botones a su estado inicial
+        self.indicador_turno.config(text=f"Turno: Jugador {self._jugador}")  # Actualiza el indicador de turno
+
+    def hacer_movimiento(self, indice):
+        """
+        Realiza un movimiento en el tablero.
+
+        :param indice: Indice del botón que se presionó.
+        """
