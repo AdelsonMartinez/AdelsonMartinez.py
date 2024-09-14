@@ -94,3 +94,12 @@ class TresEnRaya:
 
         :return: True si hay un ganador, False en caso contrario.
         """
+        combinaciones_ganadoras = [
+            (0, 1, 2), (3, 4, 5), (6, 7, 8),  # Filas
+            (0, 3, 6), (1, 4, 7), (2, 5, 8),  # Columnas
+            (0, 4, 8), (2, 4, 6)              # Diagonales
+        ]
+        for a, b, c in combinaciones_ganadoras:
+            if self._tablero[a] == self._tablero[b] == self._tablero[c] != "":
+                return True
+        return False
