@@ -87,3 +87,10 @@ class TresEnRaya:
         else:
             # Mensaje de advertencia si el movimiento no es válido
             messagebox.showwarning("Movimiento inválido", "Este espacio ya está ocupado, elige otro.")
+
+    def verificar_ganador(self):
+        """
+        Verifica si hay un ganador.
+
+        :return: True si hay un ganador, False en caso contrario.
+        """
