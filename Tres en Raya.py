@@ -67,3 +67,16 @@ class TresEnRaya:
 
         :param indice: Indice del botón que se presionó.
         """
+        # Verifica si el movimiento es válido: el botón no debe estar ocupado y no debe haber un ganador
+        if self._tablero[indice] == "" and not self.verificar_ganador():
+            self._tablero[indice] = self._jugador  # Actualiza el estado del tablero
+            self._botones[indice]["text"] = self._jugador  # Muestra el símbolo del jugador en el botón
+            self._botones[indice]["bg"] = "#ADD8E6" if self._jugador == "X" else "#FFB6C1"  # Cambia el color del botón
+
+            # Verifica si hay un ganador o si hay un empate
+            if self.verificar_ganador():
+                self._punctuaciones[self._jugador] += 1  # Incrementa la puntuación del jugador ganador
+                self.indicador_puntuacion.config(text=f"X: {self._punctuaciones['X']}  O: {self._punctuaciones['O']}")  # Actualiza la puntuación
+                messagebox.showinfo("Fin del juego", f"Ganador: Jugador {self._jugador}")
+            elif "" not in self._tablero:
+                messagebox.showinfo("Fin del juego", "Empate")
